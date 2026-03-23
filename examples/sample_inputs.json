@@ -21,7 +21,7 @@
     }
   },
   {
-    "description": "French sentence with gender agreement error",
+    "description": "French sentence with double gender agreement errors",
     "request": {
       "sentence": "La chat noir est sur le table.",
       "target_language": "French",
@@ -48,7 +48,7 @@
     }
   },
   {
-    "description": "Japanese sentence with particle error",
+    "description": "Japanese sentence with particle error (non-Latin script)",
     "request": {
       "sentence": "私は東京を住んでいます。",
       "target_language": "Japanese",
@@ -62,14 +62,14 @@
           "original": "を",
           "correction": "に",
           "error_type": "grammar",
-          "explanation": "The verb 住む (to live) takes the particle に to indicate location of residence, not を. Think of に as marking where you exist/live."
+          "explanation": "The verb 住む (to live/reside) takes the particle に to indicate location of residence, not を. Think of に as marking where you exist or live."
         }
       ],
       "difficulty": "A2"
     }
   },
   {
-    "description": "Correct German sentence -- no errors",
+    "description": "Correct German sentence — no errors",
     "request": {
       "sentence": "Ich habe gestern einen interessanten Film gesehen.",
       "target_language": "German",
@@ -83,7 +83,7 @@
     }
   },
   {
-    "description": "Portuguese sentence with spelling and word choice errors",
+    "description": "Portuguese sentence with spelling and grammar errors",
     "request": {
       "sentence": "Eu quero comprar um prezente para minha irmã, mas não sei o que ela gosta.",
       "target_language": "Portuguese",
@@ -107,6 +107,62 @@
         }
       ],
       "difficulty": "B1"
+    }
+  },
+  {
+    "description": "Arabic sentence with conjugation error (right-to-left, non-Latin script)",
+    "request": {
+      "sentence": "أنا تدرس اللغة العربية.",
+      "target_language": "Arabic",
+      "native_language": "English"
+    },
+    "expected_response": {
+      "corrected_sentence": "أنا أدرس اللغة العربية.",
+      "is_correct": false,
+      "errors": [
+        {
+          "original": "تدرس",
+          "correction": "أدرس",
+          "error_type": "conjugation",
+          "explanation": "For the first person singular 'I' (أنا), Arabic uses the verb form أدرس. The form تدرس is used for 'you' (masculine) or 'she'."
+        }
+      ],
+      "difficulty": "A2"
+    }
+  },
+  {
+    "description": "Simple correct Spanish sentence",
+    "request": {
+      "sentence": "El niño come una manzana.",
+      "target_language": "Spanish",
+      "native_language": "English"
+    },
+    "expected_response": {
+      "corrected_sentence": "El niño come una manzana.",
+      "is_correct": true,
+      "errors": [],
+      "difficulty": "A1"
+    }
+  },
+  {
+    "description": "Advanced French subjunctive error (C1 complexity)",
+    "request": {
+      "sentence": "Bien que la situation sois difficile, il convient de maintenir son calme.",
+      "target_language": "French",
+      "native_language": "English"
+    },
+    "expected_response": {
+      "corrected_sentence": "Bien que la situation soit difficile, il convient de maintenir son calme.",
+      "is_correct": false,
+      "errors": [
+        {
+          "original": "sois",
+          "correction": "soit",
+          "error_type": "conjugation",
+          "explanation": "After 'bien que', French requires the subjunctive mood. 'Être' in the third person singular subjunctive is 'soit', not 'sois' (which is first/second person subjunctive)."
+        }
+      ],
+      "difficulty": "C1"
     }
   }
 ]

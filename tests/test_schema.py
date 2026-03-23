@@ -16,7 +16,7 @@ def load_schema(name: str) -> dict:
 
 
 def load_examples() -> list[dict]:
-    return json.loads((EXAMPLES_DIR / "sample_inputs.json").read_text())
+    return json.loads((EXAMPLES_DIR / "sample_inputs.json").read_text(encoding="utf-8"))
 
 
 class TestRequestSchema:
